@@ -1,0 +1,12 @@
+{
+  "name": "api-honpery-com",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.0.1"
+  }
+}

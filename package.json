@@ -1,0 +1,17 @@
+{
+  "name": "honpery-com",
+  "version": "0.0.1",
+  "description": "The personal site.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/honpery/honpery-com.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/honpery/honpery-com/issues"
+  },
+  "homepage": "https://github.com/honpery/honpery-com#readme"
+}
