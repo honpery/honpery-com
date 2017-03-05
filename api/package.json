@@ -4,11 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=dev node ./src/app.js"
+    "dev": "NODE_ENV=dev ../node_modules/supervisor/lib/cli-wrapper.js ./src/app.js",
+    "test": "NODE_ENV=test node ../node_modules/ava/cli.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "koa": "^2.0.1"
+    "koa": "^2.0.1",
+    "koa-router": "^7.0.1",
+    "mongoose": "^4.8.5"
+  },
+  "devDependencies": {},
+  "ava": {
+    "watch": true,
+    "files": [
+      "./test/**/*.js"
+    ]
   }
 }

@@ -15,7 +15,10 @@
   },
   "homepage": "https://github.com/honpery/honpery-com#readme",
   "devDependencies": {
+    "ava": "^0.18.2",
+    "forever": "^0.15.3",
     "gulp": "^3.9.1",
-    "gulp-shell": "^0.6.1"
+    "gulp-shell": "^0.6.1",
+    "supervisor": "^0.12.0"
   }
 }
