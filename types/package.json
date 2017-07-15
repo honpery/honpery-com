@@ -1,17 +1,15 @@
 {
-    "devDependencies": {
-        "typescript": "^2.4.1"
-    },
     "name": "types-honpery-com",
-    "version": "1.0.0",
-    "main": "index.js",
+    "version": "0.0.1",
+    "main": "./src/index.ts",
     "dependencies": {
         "typescript": "^2.4.1"
     },
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
+    "scripts": {},
     "author": "",
     "license": "ISC",
-    "description": ""
+    "description": "",
+    "devDependencies": {
+        "typescript": "^2.4.1"
+    }
 }
