@@ -3,13 +3,25 @@
     "version": "0.0.1",
     "description": "",
     "main": "index.js",
-    "scripts": {},
+    "scripts": {
+        "dev": "NODE_ENV=dev nodemon --config ./config/nodemon.json ./src/app.ts"
+    },
     "author": "",
     "license": "ISC",
     "devDependencies": {
-        "typescript": "^2.4.1",
-        "types-honpery-com": "file:../types",
+        "@types/koa": "^2.0.39",
+        "@types/koa-bodyparser": "^3.0.23",
+        "@types/koa-router": "^7.0.22",
         "nodemon": "^1.11.0",
-        "ts-node": "^3.2.0"
+        "ts-node": "^3.2.0",
+        "types-honpery-com": "file:../types",
+        "typescript": "^2.4.1"
+    },
+    "dependencies": {
+        "graphql": "^0.10.4",
+        "graphql-server-koa": "^1.0.0",
+        "koa": "^2.3.0",
+        "koa-bodyparser": "^4.2.0",
+        "koa-router": "^7.2.1"
     }
 }
