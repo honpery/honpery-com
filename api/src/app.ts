@@ -12,4 +12,4 @@ app.use(bodyParser());
 
 Router.init(app);
 
-app.listen(PORT, () => console.log(`Server running at ${SERVER}:${PORT}.`));
+app.listen(PORT, () => console.log(`Server running at http://${SERVER}:${PORT}.`));

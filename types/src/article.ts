@@ -20,5 +20,5 @@ export interface IArticle {
     author?: UserId | IUser;
     create_time?: Time;
     update_time?: Time;
-    id_deleted?: boolean;
+    is_deleted?: boolean;
 }

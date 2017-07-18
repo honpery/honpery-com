@@ -6,6 +6,7 @@
             "./node_modules/@types"
         ],
         "sourceMap": true,
-        "strict": true
+        "strict": true,
+        "noImplicitAny": false
     }
 }
