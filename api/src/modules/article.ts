@@ -7,14 +7,16 @@ export const ArticleSchema = `
         articles(limit: Int): [Article]
     }
 
+    type Mutation {
+        createArticle(title: String): Article
+        updateArticle(_id: ID): Article
+        deleteArticle(_id: ID): Article
+    }
+
     type Article {
         _id: String
         title: String
         description: String
-    }
-
-    type Mutation {
-        createArticle(title: String): Article
     }
 `;
 
@@ -29,6 +31,12 @@ export const ArticleResolver = {
     },
     Mutation: {
         createArticle: () => {
+
+        },
+        updateArticle: () => {
+
+        },
+        deleteArticle: () => {
 
         }
     }
