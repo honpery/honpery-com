@@ -1,14 +1,17 @@
 {
   "name": "honpery-com",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "init": "./scripts/init.sh"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "tslint": "^5.5.0"
-  }
+    "npm-check-updates": "^2.12.1",
+    "tslint": "^5.5.0",
+    "typescript": "^2.4.2"
+  },
+  "dependencies": {}
 }
