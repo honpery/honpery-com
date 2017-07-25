@@ -10,6 +10,7 @@ koa + GraphQL + TypeScript
 - [ ] category
 - [ ] tag
 - [ ] user
+- [ ] auth
 
 ## home - 主页
 

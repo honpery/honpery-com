@@ -1,84 +1,44 @@
 /**
- * article modules.
+ * article type.
  */
-import { Context } from 'koa';
+import { GraphQLObjectType } from 'graphql';
+import { globalIdField } from 'graphql-relay';
+import { GqlType, types } from '../helpers';
 
-export const ArticleSchema = `
-    type Query {
-        # 文章列表
-        articles(): [Article]
-
-        # 文章详情
-        article(id: ID): Article
-    }
-
-    type Mutation {
-
-        # 创建文章
-        addArticle(article: Article): Article
-
-        # 更新文章
-        updateArticle(article_id: ID, new_article: Article): Article
-
-    }
-
-    # 文章
-    tyope Article {
-        # ObjectID
-        _id: ID
-
-        # 标题
-        title: String
-
-        # 分类
-        category: Category
-
-        # 标签
-        tags: [Tag]
-
-        # 描述
-        description: String
-
-        # 内容
-        body: String
-
-        # 创建时间
-        create_time: String
-
-        # 更新时间
-        update_time: String
-
-        # 状态
-        status: ArticleStatus
-    }
-
-    enum ArticleStatus {
-        # 已发布
-        PUBLISH
-
-        # 草稿
-        DRAFT
-
-        # 已删除
-        DELETE
-    }
-`;
-
-export const ArticleResolvers = {
-    Query: {
-        async articles(_, { }, ctx: Context) {
-            return [{}];
+export const ArticleType = new GraphQLObjectType({
+    name: 'Article',
+    description: '文章',
+    fields: () => ({
+        id: globalIdField('Article', article => article._id),
+        title: {
+            type: types.string,
+            description: '标题',
         },
-        async article(_, { }, ctx: Context) {
-            return {};
+        desc: {
+            type: types.string,
+            description: '概述',
         },
-    },
-    Mutation: {
-        async createArticle(_, { article }, ctx: Context) {
-            return {};
+        body: {
+            type: types.string,
+            description: '内容',
         },
-        async updateArticle(_, { article_id, new_article }, ctx: Context) {
-            return {};
+        create_time: {
+            type: types.date,
+            description: '创建时间',
+        },
+        update_time: {
+            type: types.date,
+            description: '更新时间',
+        },
+    }),
+});
+
+export const ArticleQuery = {
+    articles: {
+        type: ArticleType,
+        description: '获取文章列表',
+        async resolve() {
+            return { title: 'asdasda' };
         },
     },
 };

@@ -1,10 +1,10 @@
 /**
  * article module types.
  */
-import { ObjectId, Time } from './common';
-import { TagId, ITag } from './tag';
 import { CategoryId, ICategory } from './category';
-import { UserId, IUser } from './user';
+import { ObjectId, Time } from './common';
+import { ITag, TagId } from './tag';
+import { IUser, UserId } from './user';
 
 export type ArticleId = ObjectId;
 

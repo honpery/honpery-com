@@ -4,11 +4,13 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "dev": "NODE_ENV=dev nodemon --config ./config/nodemon.json ./src/app.ts"
+        "dev": "npm run link && NODE_ENV=dev nodemon --config ./config/nodemon.json ./src/app.ts",
+        "link": "npm link types-honpery-com"
     },
     "author": "",
     "license": "ISC",
     "devDependencies": {
+        "@types/graphql-relay": "^0.4.2",
         "@types/koa": "^2.0.39",
         "@types/koa-bodyparser": "^3.0.23",
         "@types/koa-router": "^7.0.22",
@@ -19,10 +21,12 @@
     },
     "dependencies": {
         "graphql": "^0.10.4",
+        "graphql-relay": "^0.5.2",
         "graphql-server-koa": "^1.0.0",
         "graphql-tools": "^1.1.0",
         "koa": "^2.3.0",
         "koa-bodyparser": "^4.2.0",
-        "koa-router": "^7.2.1"
+        "koa-router": "^7.2.1",
+        "mongoose": "^4.11.3"
     }
 }

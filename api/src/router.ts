@@ -1,19 +1,19 @@
 /**
  * app router.
  */
-import * as router from 'koa-router';
+import { graphiqlKoa, graphqlKoa } from 'graphql-server-koa';
 import * as koa from 'koa';
-import { graphqlKoa, graphiqlKoa } from 'graphql-server-koa';
+import * as KoaRouter from 'koa-router';
 import { Schemas } from './modules';
 
 export class Router {
-    static init(app: koa) {
-        const _router = new router();
+    public static init(app: koa) {
+        const router = new KoaRouter();
 
-        _router.post('/', graphqlKoa({ schema: Schemas }));
-        _router.get('/debug', graphiqlKoa({ endpointURL: '/' }));
+        router.post('/', graphqlKoa({ schema: Schemas }));
+        router.get('/debug', graphiqlKoa({ endpointURL: '/' }));
 
-        app.use(_router.routes());
-        app.use(_router.allowedMethods());
+        app.use(router.routes());
+        app.use(router.allowedMethods());
     }
 }
