@@ -43,3 +43,9 @@ Angular + excur-angular + webpack + TypeScript
 
 ### 技术选型
 TypeScript
+
+## 端口号占用
+api: 9000
+home: 9100
+blog: 9200
+admin: 9300

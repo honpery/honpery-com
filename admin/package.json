@@ -1,14 +1,21 @@
 {
-  "name": "admin-honpery-com",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "typescript": "^2.4.1"
-  }
+    "name": "admin-honpery-com",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "npm run link && NODE_ENV=dev ../node_modules/.bin/webpack-dev-server --config ./config/webpack.dev.js",
+        "prod": "NODE_ENV=prod ../node_modules/.bin/webpack --config ./config/webpack.prod.js",
+        "link": "npm link excur-angular"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "html-webpack-plugin": "^2.29.0",
+        "ts-loader": "^2.3.1",
+        "webpack-merge": "^4.1.0"
+    },
+    "dependencies": {
+        "excur-angular": "^0.0.1"
+    }
 }
