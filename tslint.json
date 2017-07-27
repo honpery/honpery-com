@@ -9,7 +9,8 @@
             true, "single", "jsx-double"
         ],
         "object-literal-sort-keys": false,
-        "arrow-parens": false
+        "arrow-parens": false,
+        "curly": false
     },
     "rulesDirectory": []
 }

@@ -1,10 +1,14 @@
-const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+const { root, isProd } = require('../helper');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-const root = exports.root = (...paths) => path.join(__dirname, '..', ...paths);
+const extractSass = new ExtractTextPlugin({
+    filename: "[name].[contenthash].css",
+    disable: isProd(),
+});
 
-exports.config = {
+module.exports = {
     entry: {
         app: root('src/app.ts'),
         vendor: root('src/vendor.ts'),
@@ -22,7 +26,29 @@ exports.config = {
 
     module: {
         loaders: [
-            { test: /.tsx?$/, loader: 'ts-loader', options: { configFileName: '../tsconfig.json' } }
+
+            {
+                test: /\.ts$/,
+                loaders: [
+
+                    {
+                        loader: 'awesome-typescript-loader',
+                        options: { configFileName: root('tsconfig.json') }
+                    },
+                ].concat(isProd() ? [] : '@angularclass/hmr-loader')
+            },
+
+            {
+                test: /\.scss$/,
+                use: extractSass.extract({
+                    use: [{
+                        loader: "css-loader"
+                    }, {
+                        loader: "sass-loader"
+                    }],
+                    fallback: "style-loader"
+                })
+            }
         ],
     },
 
@@ -35,8 +61,10 @@ exports.config = {
         new webpack.HotModuleReplacementPlugin(),
 
         new webpack.optimize.CommonsChunkPlugin({
-            name: ['main', 'vendor', 'polyfill'],
+            name: ['app', 'vendor', 'polyfills'],
             minChunks: Infinity,
-        })
+        }),
+
+        extractSass,
     ],
 };

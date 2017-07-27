@@ -1,5 +1,6 @@
 const merge = require('webpack-merge');
-const { root, config } = require('./webpack.common');
+const config = require('./webpack.common');
+const { root } = require('../helper');
 
 module.exports = merge(config, {
     devtool: 'source-map',
